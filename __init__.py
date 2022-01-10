@@ -20,7 +20,10 @@ class CCRadioNewSkill(MycroftSkill):
     @intent_handler("PonCCRadio.intent")
     def handle_pon_ccradio_intent(self, message):
         self.speak_dialog("Reproducindo")
-        self.process = play_mp3('/home/pi/mycroft-core/skills/skill-ccradioNew/ccradio.pls')
+        #self.process = play_mp3('/home/pi/mycroft-core/skills/skill-ccradioNew/ccradio.pls')
+        import vlc
+        p = vlc.MediaPlayer("https://radioserver02.ccradio.es/radio/8000/radio.mp3")
+        p.play()
         
 def create_skill():
     return CCRadioNewSkill()
