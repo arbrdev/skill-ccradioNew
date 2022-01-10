@@ -14,6 +14,8 @@
 
 from mycroft.skills import MycroftSkill, intent_handler
 from mycroft.util import play_mp3
+from mycroft.skills.common_play_skill import CommonPlaySkill, CPSMatchLevel
+
 
 class CCRadioNewSkill(MycroftSkill):
                    
