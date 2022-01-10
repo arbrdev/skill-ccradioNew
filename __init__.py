@@ -18,7 +18,7 @@ from mycroft.skills.audioservice import AudioService
 
 class CCRadioNewSkill(MycroftSkill):
     def initialize(self):                   
-        self.audioservice = AudioService(self.emitter)
+        self.audioservice = AudioService(self.bus)
             
     @intent_handler("PonCCRadio.intent")
     def handle_pon_ccradio_intent(self, message):
