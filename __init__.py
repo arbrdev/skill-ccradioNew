@@ -13,11 +13,14 @@
 # limitations under the License.
 
 from mycroft.skills import MycroftSkill, intent_handler
+from mycroft.skills.audioservice import AudioService
 
 class CCRadioNewSkill(MycroftSkill):
     @intent_handler("PonCCRadio.intent")
     def handle_pon_ccradio_intent(self, message):
         self.speak_dialog("Reproducindo")
+    if AudioService:
+        self.audioservice = AudioService(self.bus)
         
 def create_skill():
     return CCRadioNewSkill()
