@@ -13,8 +13,6 @@
 # limitations under the License.
 
 from mycroft.skills import MycroftSkill, intent_handler
-from mycroft.util import play_mp3
-from mycroft.skills.common_play_skill import CommonPlaySkill, CPSMatchLevel
 from mycroft.skills.audioservice import AudioService
 
 
@@ -25,7 +23,7 @@ class CCRadioNewSkill(MycroftSkill):
     @intent_handler("PonCCRadio.intent")
     def handle_pon_ccradio_intent(self, message):
         self.speak_dialog("Reproducindo")
-        #self.process = play_mp3('https://radioserver02.ccradio.es/radio/8000/radio.mp3')
         self.audioservice.play('https://radioserver02.ccradio.es/radio/8000/radio.mp3')
+        
 def create_skill():
     return CCRadioNewSkill()
