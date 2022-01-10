@@ -21,8 +21,7 @@ class CCRadioNewSkill(MycroftSkill):
     def handle_pon_ccradio_intent(self, message):
         self.speak_dialog("Reproducindo")
     
-    if AudioService:
-        self.audioservice = AudioService(self.bus)
+    self.audioservice = AudioService(self.bus)
         
 def create_skill():
     return CCRadioNewSkill()
