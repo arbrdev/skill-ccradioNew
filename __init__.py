@@ -16,7 +16,7 @@ from mycroft.skills import MycroftSkill, intent_handler
 from mycroft.skills.audioservice import AudioService
 
 class CCRadioNewSkill(MycroftSkill):
-    def __init__(self):
+    def __init__():
         self.audioservice = None
                 
     @intent_handler("PonCCRadio.intent")
