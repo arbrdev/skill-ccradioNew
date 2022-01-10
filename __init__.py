@@ -16,6 +16,9 @@ from mycroft.skills import MycroftSkill, intent_handler
 from mycroft.skills.audioservice import AudioService
 
 class CCRadioNewSkill(MycroftSkill):
+    def __init__(self):
+        self.audioservice = None
+                
     @intent_handler("PonCCRadio.intent")
     def handle_pon_ccradio_intent(self, message):
         self.speak_dialog("Reproducindo")
